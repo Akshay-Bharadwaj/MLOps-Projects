@@ -167,31 +167,16 @@ Apply with:
 kubectl apply -f deploy.yml
 ```
 
----
+If it is to be run locally (without a cloud LoadBalancer), port-forwarding is used to access the API:
+```bash
+kubectl port-forward svc/profit-pred-api 3000:80 --address=0.0.0.0
+```
 
-## 📈 Results & Insights
-- **Model Accuracy:** Test R² ≥ 0.9  
-- **R&D Spend** is the most significant feature affecting profit.  
-- **State** has minimal impact but provides regional differentiation.
-
----
-
-## 🚀 Future Improvements
-- Visualize feature impact using **Seaborn** regression plots or **correlation heatmaps**.  
-- Add **Streamlit UI** for interactive prediction interface.  
-- Include **CI/CD automation** for continuous deployment.
+To access via browser or API client at:
+```bash
+http://localhost:3000
+```
 
 ---
 
-## 🧩 Concepts Reinforced
-- Linear Regression (Supervised ML Algorithm)  
-- Categorical Encoding (One-Hot Encoding)  
-- Train–Test Split & Model Evaluation  
-- Significance Level (SL) and Confidence Level (CL)  
-- Model Serialization (Pickle)  
-- API Deployment with FastAPI, Docker & Kubernetes
 
----
-
-## 🪪 License
-This project is licensed under the [MIT License](LICENSE).
