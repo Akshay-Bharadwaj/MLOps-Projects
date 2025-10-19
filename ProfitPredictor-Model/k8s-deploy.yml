@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profit-pred-api
+  labels:
+    app: profit-pred-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: profit-pred-api
+  template:
+    metadata:
+      labels:
+        app: profit-pred-api
+    spec:
+      containers:
+        - name: profit-pred-api
+          image: akshaybharadwajs98/mlops-profitpred:v1
+          ports:
+            - containerPort: 8000
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: profit-pred-api-service
+spec:
+  selector:
+    app: profit-pred-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
+  type: LoadBalancer
