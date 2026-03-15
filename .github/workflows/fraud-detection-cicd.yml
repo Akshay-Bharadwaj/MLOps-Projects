@@ -2,24 +2,22 @@ name: Fraud Detection CI/CD
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - 'FraudDetection/**'
+      - "FraudDetection/**"
 
 jobs:
-
   build-and-push:
-
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Build Docker Image
         run: |
-          cd Fraud-Detection
-          docker build -t fraud-detection-api .
+          docker build -t fraud-detection-api ./FraudDetection
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
