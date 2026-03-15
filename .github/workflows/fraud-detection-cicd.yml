@@ -3,7 +3,7 @@ name: Fraud Detection CI/CD
 on:
   push:
     paths:
-      - 'Fraud-Detection/**'
+      - 'FraudDetection/**'
 
 jobs:
 
