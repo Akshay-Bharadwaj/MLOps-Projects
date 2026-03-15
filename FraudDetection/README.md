@@ -258,6 +258,7 @@ Possible enhancements for production-grade systems:
 - Automated Retraining Pipelines
 - Real-Time Streaming Inference
 - Kubernetes Deployment
+- Building an app using Streamlit
 
 ---
 
